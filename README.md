@@ -7,13 +7,12 @@ Dependent Repository https://github.com/hipols87/terraform-config.git
 <li>git clone https://github.com/hipols87/terraform-config.git</li>
 </ul>
 
-vim ~/.aws/credentials . 
+>vim ~/.aws/credentials
+>[default]
+>aws_access_key_id = xxxxxxxxxxxxxxxxxx
+>aws_secret_access_key = yyyyyyyyyyyyyyyyyyyyyyyy
 
-[default] . 
-aws_access_key_id = xxxxxxxxxxxxxxxxxx . 
-aws_secret_access_key = yyyyyyyyyyyyyyyyyyyyyyyy . 
-
-cd terraform/s3_bucket
+>cd terraform/s3_bucket
 
 ## Plan
 
