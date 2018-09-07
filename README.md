@@ -1,4 +1,4 @@
-#### Developments with Terraform
+## Developments with Terraform
 
 Dependent Repository https://github.com/hipols87/terraform-config.git
 
@@ -15,16 +15,18 @@ aws_access_key_id = xxxxxxxxxxxxxxxxxx
 
 aws_secret_access_key = yyyyyyyyyyyyyyyyyyyyyyyy  
 
-cd terraform/s3_bucket
 
-## Plan
+
+-----------------------------------------------------------------------------------------------
+cd terraform/s3_bucket
+#### Plan
 
 terraform plan -var-file="../../terraform-config/non-prod/dev-env/variables.tfvars" -out plan.out
 
-## Apply
+#### Apply
 
 terraform apply "plan.out"
 
-## Destroy
+#### Destroy
 
 terraform destroy -var-file="../../terraform-config/non-prod/dev-env/variables.tfvars"
