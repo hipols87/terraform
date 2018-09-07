@@ -1,7 +1,8 @@
 provider "aws" {
-  access_key = "${var.access_key}"
-  secret_key = "${var.secret_key}"
-  region     = "${var.region}"
+  shared_credentials_file = "/Users/hipols/.aws/credentials"
+  region                  = "${var.region}"
+  profile                 = "${var.profile}"
+
 }
 
 terraform {
@@ -20,8 +21,6 @@ data "terraform_remote_state" "ec2_test" {
     bucket = "tfstate-dev-env-s3-bucket"
     key    = "ec2_test/terraform.tfstate"
     region = "${var.region}"
-    # access_key = "${var.s3bucket_access_key}"
-    # secret_key = "${var.s3bucket_secret_key}"
   }
 }
 
