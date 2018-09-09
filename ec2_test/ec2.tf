@@ -6,21 +6,18 @@ provider "aws" {
 }
 
 terraform {
-  backend "s3" {
-    bucket  = "tf-remote-state-storage"
-    key     = "non-prod/dev-env/terraform.tfstate"
-    region  = "${var.region}"
-    encrypt = true
-  }
+  backend "s3" {}
 }
 
 data "terraform_remote_state" "ec2_test" {
   backend = "s3"
   config {
-    encrypt = true
-    bucket = "tfstate-dev-env-s3-bucket"
-    key    = "ec2_test/terraform.tfstate"
-    region = "${var.region}"
+    encrypt                 = true
+    bucket                  = "${var.bucket_name}"
+    key                     = "state/${var.envname}/terraform.tfstate"
+    region                  = "${var.region}"
+    shared_credentials_file = "/Users/hipols/.aws/credentials"
+    profile                 = "${var.s3_state_profile}"
   }
 }
 

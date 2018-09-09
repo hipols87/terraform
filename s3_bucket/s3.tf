@@ -14,7 +14,7 @@ resource "aws_iam_access_key" "user" {
 }
 
 resource "aws_iam_user_policy" "user_ro" {
-    name = "test"
+    name = "${var.bucket_name}_ro"
     user = "${aws_iam_user.user.name}"
     policy= <<EOF
 {
